@@ -81,6 +81,14 @@ The 11700k includes an integrated graphics device (`[8086:4c8a] 00:02.0 VGA comp
 
 ### [Windows 10 - 6 Core (isolated) passthrough - GVT-D passthrough - NVIDIA passthrough](w10_z590-a_11700k_6core_gvt-d_and_nvidia_passthrough.xml)
 
+WORKING:
+- DP & HDMI output at 4K60 (3840x2160 @ 60Hz x 2)
+- HDR
+
+NOT-WORKING (Yet?):
+- HDMI audio does not appear to work in Windows nor do any of the analog audio ports
+  - The SPDIF shows as working but has not been tested
+
 NOTES:
 - This VM uses 6 isolated cores:
   - Unraid boots using cores 0 and 7 (and HT) so that leaves cores 1-6 (and HT) isolated for VM usage
@@ -88,8 +96,6 @@ NOTES:
   isolcpus=1-6,9-14 nohz_full=1-6,9-14
   ```
   - see `<vcpu>`, `<cputune>`, and `<cpu>` blocks for related configuration
-- HDMI audio does not appear to work in Windows nor do any of the analog audio ports
-  - The SPDIF shows as working but has not been tested
 - Adding TPM emulator device and changing loader to OVMF TPM will fulfill requirements for Windows 11 upgrade
   - Driver re-install via RDP may be required after upgrade
 - `<qemu:commandline>` block is entirely optional but `<qemu:override>` block is critical for GVT-D
