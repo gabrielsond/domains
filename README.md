@@ -81,11 +81,11 @@ The 11700k includes an integrated graphics device (`[8086:4c8a] 00:02.0 VGA comp
 
 ### [Windows 10 - 6 Core (isolated) passthrough - NVIDIA passthrough - GVT-D](w10_z590-a_11700k_6core_gvt-d_and_nvidia_passthrough.xml)
 
-WORKING:
+GVT-D WORKING:
 - DP & HDMI output at 4K60 (3840x2160 @ 60Hz x 2)
 - HDR
 
-NOT-WORKING (Yet?):
+GVT-D NOT-WORKING (Yet?):
 - HDMI audio does not appear to work in Windows nor do any of the analog audio ports
   - The SPDIF shows as working but has not been tested
 
