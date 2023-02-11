@@ -23,8 +23,11 @@ The 11700k includes an integrated graphics device (`[8086:4c8a] 00:02.0 VGA comp
 
 ## Requirements:
 - Host OS: Linux
-  - Tested: Unraid 6.11.5 (Kernel: 5.19.17-Unraid)
-    - *should* work with most modern kernels/distros
+  - Tested:
+    - Unraid 6.11.5 (Kernel: 5.19.17-Unraid)
+      - *should* work with most modern kernels/distros
+    - Libvirt version 8.7.0
+    - QEMU version 7.1.0
 - Kernel modules blacklisted
   `modprobe.blacklist=i2c_i801,i2c_smbus,snd_hda_intel,snd_hda_codec_hdmi,i915,drm,drm_kms_helper,i2c_algo_bit`
   - Possibly excessive; more testing required
