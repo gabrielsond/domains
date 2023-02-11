@@ -2,14 +2,15 @@
 A collection of domain/VM XML configuration files focused on integrated GPU dedicated passthrough ([GVT-D](https://github.com/intel/gvt-linux/wiki) "Legacy" mode on Intel 11700k).
 
 ## My Current Hardware/Background
-Intel Core i7 11700k
-ASUS Prime Z590-A
-Trident Z Neo DDR4-3600 CL16-19-19-39 1.35V 16GB x 2
-ASUS DUAL RTX 3070 OC 8GB
-WD Black SN750 NVMe SSD 1TB (Unraid Cache)
-WD Black SN850 NVMe SSD 1TB (Resevered for VM Passthrough)
-Fresco FL1100 4x USB 3.0 PCI Express Card PCI-e USB3.0 Host Controller Adapter (Resevered for VM passthrough; bus='0x07' slot='0x00' function='0x0)
-Marvell 88SE9215 PCIe 2.0 x1 4-port SATA 6 Gb/s Controller
+- Intel Core i7 11700k
+- ASUS Prime Z590-A
+- Trident Z Neo DDR4-3600 CL16-19-19-39 1.35V 16GB x 2
+- ASUS DUAL RTX 3070 OC 8GB
+- WD Black SN750 NVMe SSD 1TB (Unraid Cache)
+- WD Black SN850 NVMe SSD 1TB (Resevered for VM Passthrough)
+- Fresco FL1100 4x USB 3.0 PCI Express Card PCI-e USB3.0 Host Controller Adapter (Resevered for VM passthrough; bus='0x07' slot='0x00' function='0x0)
+- Marvell 88SE9215 PCIe 2.0 x1 4-port SATA 6 Gb/s Controller
+
 7 x 5400 RPM SATA 4TB (6+1 Unraid Array):
 - Parity: ST4000VN008
 - 1 x WDC_WD40EFRX
