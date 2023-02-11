@@ -70,7 +70,8 @@ NOTES:
   isolcpus=1-6,9-14 nohz_full=1-6,9-14
   ```
   - see `<vcpu>`, `<cputune>`, and `<cpu>` blocks for related configuration
-- HDMI audio does not appear to work in Windows nor do any of the analog ports. The SPDIF shows as working but has not been tested.
+- HDMI audio does not appear to work in Windows nor do any of the analog audio ports
+  - The SPDIF shows as working but has not been tested
 - Installation process:
   - Set VNC as the only graphics device in XML,  save, review to ensure changes saved successfully, start VM
   - Install Windows, enable and test RDP login, and shutdown the VM
