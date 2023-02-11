@@ -79,7 +79,7 @@ The 11700k includes an integrated graphics device (`[8086:4c8a] 00:02.0 VGA comp
 
 ## Configurations
 
-### [Windows 10 - 6 Core (isolated) passthrough - GVT-D passthrough - NVIDIA passthrough](w10_z590-a_11700k_6core_gvt-d_and_nvidia_passthrough.xml)
+### [Windows 10 - 6 Core (isolated) passthrough - NVIDIA passthrough - GVT-D](w10_z590-a_11700k_6core_gvt-d_and_nvidia_passthrough.xml)
 
 WORKING:
 - DP & HDMI output at 4K60 (3840x2160 @ 60Hz x 2)
