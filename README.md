@@ -38,6 +38,23 @@ The 11700k includes an integrated graphics device (`[8086:4c8a] 00:02.0 VGA comp
   `pcie_acs_override=downstream,multifunction vfio_iommu_type1.allow_unsafe_interrupts=1`
   - used for passing through associated audio device
   `[8086:43c8] 00:1f.3 Audio device: Intel Corporation Tiger Lake-H HD Audio Controller`
+  - *may* be important to allowing 00:1f.0 to be bound to VFIO
+- PCI devices bound to VFIO:
+  - 11700k/PRIME Z590-A devices:
+  ```
+  [8086:4c8a] 00:02.0 VGA compatible controller: Intel Corporation RocketLake-S GT1 [UHD Graphics 750]
+  [8086:4385] 00:1f.0 ISA bridge: Intel Corporation Device 4385
+  [8086:43c8] 00:1f.3 Audio device: Intel Corporation Tiger Lake-H HD Audio Controller
+  [8086:43a3] 00:1f.4 SMBus: Intel Corporation Tiger Lake-H SMBus Controller
+  [8086:43a4] 00:1f.5 Serial bus controller: Intel Corporation Tiger Lake-H SPI Controller
+  ```
+  - Devices specific to this configuration:
+  ```
+  [10de:2484] 01:00.0 VGA compatible controller: NVIDIA Corporation GA104 [GeForce RTX 3070]
+  [10de:228b] 01:00.1 Audio device: NVIDIA Corporation GA104 High Definition Audio Controller
+  [15b7:5011] 03:00.0 Non-Volatile memory controller: Sandisk Corp WD PC SN810 / Black SN850 NVMe SSD
+  [1b73:1100] 07:00.0 USB controller: Fresco Logic FL1100 USB 3.0 Host Controller (rev 10)
+  ```
 - Secondary GPU or device to log in to Guest OS/VM via VNC/RDP
 - Integrated graphics physically connected to powered-on monitor on HDMI port (be patient, watch for changes, always have a remote login method available)
 - Specific QEMU XML:
