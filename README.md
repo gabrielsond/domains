@@ -61,7 +61,8 @@ The 11700k includes an integrated graphics device (`[8086:4c8a] 00:02.0 VGA comp
   - Hopefully, there is a better option because [i915ovmf.rom](https://github.com/patmagauran/i915ovmfPkg) did not work in testing
 
 ## Configurations
-[Windows 10 - 6 Core (isolated) passthrough - GVT-D passthrough - NVIDIA passthrough](w10_z590-a_11700k_6core_gvt-d_and_nvidia_passthrough.xml)
+
+### [Windows 10 - 6 Core (isolated) passthrough - GVT-D passthrough - NVIDIA passthrough](w10_z590-a_11700k_6core_gvt-d_and_nvidia_passthrough.xml)
 
 NOTES:
 - This VM uses 6 isolated cores:
@@ -72,15 +73,6 @@ NOTES:
   - see `<vcpu>`, `<cputune>`, and `<cpu>` blocks for related configuration
 - HDMI audio does not appear to work in Windows nor do any of the analog audio ports
   - The SPDIF shows as working but has not been tested
-- Installation process:
-  - Set VNC as the only graphics device in XML,  save, review to ensure changes saved successfully, start VM
-  - Install Windows, enable and test RDP login, and shutdown the VM
-  - With RDP enabled, remove VNC graphics device and add integrated graphics device to XML, save XML, review to ensure changes saved successfully, start VM
-  - Login with RDP and install Intel graphics driver (as many times as necessary until error goes away and monitor shows output; 2-3 times in my experience)
-  - Ensure Device Manager shows all devices working properly
-  - Install NVIDIA graphics drivers and shutdown VM
-  - Add NVIDIA graphics device to XML, save, review to ensure changes saved successfully, start VM
-  - Dual GPU passthrough should now work (4x4K tested: NVIDIA: DPx2 & Intel DPx1 HDMIx1)
 - Adding TPM emulator device and changing loader to OVMF TPM will fulfill requirements for Windows 11 upgrade
   - Driver re-install via RDP may be required after upgrade
 - `<qemu:commandline>` block is entirely optional but `<qemu:override>` block is critical for GVT-D
@@ -88,3 +80,13 @@ NOTES:
   - `/mnt/cache/isos/` is not the best location for the ROM, this will be moved
 - `<name>Windows 10 (EXPERIMENTAL CONFIG 2)</name>` will be updated in the near future
 - see commit comments for details/history
+
+Installation process:
+- Set VNC as the only graphics device in XML,  save, review to ensure changes saved successfully, start VM
+- Install Windows, enable and test RDP login, and shutdown the VM
+- With RDP enabled, remove VNC graphics device and add integrated graphics device to XML, save XML, review to ensure changes saved successfully, start VM
+- Login with RDP and install Intel graphics driver (as many times as necessary until error goes away and monitor shows output; 2-3 times in my experience)
+- Ensure Device Manager shows all devices working properly
+- Install NVIDIA graphics drivers and shutdown VM
+- Add NVIDIA graphics device to XML, save, review to ensure changes saved successfully, start VM
+- Dual GPU passthrough should now work (4x4K tested: NVIDIA: DPx2 & Intel DPx1 HDMIx1)
