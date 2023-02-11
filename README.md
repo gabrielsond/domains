@@ -31,7 +31,7 @@ The 11700k includes an integrated graphics device (`[8086:4c8a] 00:02.0 VGA comp
 - Specific QEMU XML:
   - domain tag must be updated to add QEMU namespace:
   ```
-  <domain type='kvm' id='5' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
+  <domain type='kvm' id='#' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
   ```
   - override integrated passthrough settings (add before `</domain>`):
   ```
